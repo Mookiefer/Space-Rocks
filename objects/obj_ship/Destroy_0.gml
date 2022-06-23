@@ -5,6 +5,27 @@
 /// @DnDSaveInfo : "soundid" "snd_die"
 audio_play_sound(snd_die, 0, 0);
 
+/// @DnDAction : YoYo Games.Common.Temp_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 5ECF49F0
+/// @DnDInput : 2
+/// @DnDArgument : "var" "xx"
+/// @DnDArgument : "value" "x"
+/// @DnDArgument : "var_1" "yy"
+/// @DnDArgument : "value_1" "y"
+var xx = x;
+var yy = y;
+
+/// @DnDAction : YoYo Games.Particles.Part_Particles_Create
+/// @DnDVersion : 1
+/// @DnDHash : 54FB9637
+/// @DnDApplyTo : {obj_particles}
+/// @DnDArgument : "x" "xx"
+/// @DnDArgument : "y" "yy"
+/// @DnDArgument : "system" "partSys"
+/// @DnDArgument : "type" "partTypeShipDebris"
+with(obj_particles) part_particles_create(partSys, xx, yy, partTypeShipDebris, 10);
+
 /// @DnDAction : YoYo Games.Loops.Repeat
 /// @DnDVersion : 1
 /// @DnDHash : 09C7E448

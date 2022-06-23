@@ -5,6 +5,17 @@
 /// @DnDSaveInfo : "soundid" "snd_hurt"
 audio_play_sound(snd_hurt, 0, 0);
 
+/// @DnDAction : YoYo Games.Common.Temp_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 3C09BA4F
+/// @DnDInput : 2
+/// @DnDArgument : "var" "xx"
+/// @DnDArgument : "value" "x"
+/// @DnDArgument : "var_1" "yy"
+/// @DnDArgument : "value_1" "y"
+var xx = x;
+var yy = y;
+
 /// @DnDAction : YoYo Games.Common.Apply_To
 /// @DnDVersion : 1
 /// @DnDHash : 7E2CF2A6
@@ -38,6 +49,18 @@ if(sprite_index == spr_asteroid_med)
 	cameraShake = 2;
 	
 	}
+
+	/// @DnDAction : YoYo Games.Particles.Part_Particles_Create
+	/// @DnDVersion : 1
+	/// @DnDHash : 14A1E7F4
+	/// @DnDApplyTo : {obj_particles}
+	/// @DnDParent : 01EE6E5B
+	/// @DnDArgument : "x" "xx"
+	/// @DnDArgument : "y" "yy"
+	/// @DnDArgument : "system" "partSys"
+	/// @DnDArgument : "type" "partTypeAsteroidDebris"
+	/// @DnDArgument : "number" "8"
+	with(obj_particles) part_particles_create(partSys, xx, yy, partTypeAsteroidDebris, 8);
 
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1
@@ -87,6 +110,18 @@ if(sprite_index == spr_asteroid_huge)
 	
 	}
 
+	/// @DnDAction : YoYo Games.Particles.Part_Particles_Create
+	/// @DnDVersion : 1
+	/// @DnDHash : 75394017
+	/// @DnDApplyTo : {obj_particles}
+	/// @DnDParent : 65E367E0
+	/// @DnDArgument : "x" "xx"
+	/// @DnDArgument : "y" "yy"
+	/// @DnDArgument : "system" "partSys"
+	/// @DnDArgument : "type" "partTypeAsteroidDebris"
+	/// @DnDArgument : "number" "12"
+	with(obj_particles) part_particles_create(partSys, xx, yy, partTypeAsteroidDebris, 12);
+
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1
 	/// @DnDHash : 45CB44BA
@@ -132,6 +167,18 @@ else
 	cameraShake = 1;
 	
 	}
+
+	/// @DnDAction : YoYo Games.Particles.Part_Particles_Create
+	/// @DnDVersion : 1
+	/// @DnDHash : 5C410781
+	/// @DnDApplyTo : {obj_particles}
+	/// @DnDParent : 2B6C5996
+	/// @DnDArgument : "x" "xx"
+	/// @DnDArgument : "y" "yy"
+	/// @DnDArgument : "system" "partSys"
+	/// @DnDArgument : "type" "partTypeAsteroidDebris"
+	/// @DnDArgument : "number" "4"
+	with(obj_particles) part_particles_create(partSys, xx, yy, partTypeAsteroidDebris, 4);
 }
 
 /// @DnDAction : YoYo Games.Loops.Repeat
