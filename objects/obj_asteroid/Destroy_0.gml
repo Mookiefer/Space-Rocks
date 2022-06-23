@@ -27,6 +27,18 @@ with(obj_game) {
 /// @DnDArgument : "value" "spr_asteroid_med"
 if(sprite_index == spr_asteroid_med)
 {
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 045F7007
+	/// @DnDApplyTo : {obj_camera}
+	/// @DnDParent : 01EE6E5B
+	/// @DnDArgument : "expr" "2"
+	/// @DnDArgument : "var" "cameraShake"
+	with(obj_camera) {
+	cameraShake = 2;
+	
+	}
+
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1
 	/// @DnDHash : 14923CB2
@@ -63,6 +75,18 @@ if(sprite_index == spr_asteroid_med)
 /// @DnDArgument : "value" "spr_asteroid_huge"
 if(sprite_index == spr_asteroid_huge)
 {
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 23C32B5F
+	/// @DnDApplyTo : {obj_camera}
+	/// @DnDParent : 65E367E0
+	/// @DnDArgument : "expr" "4"
+	/// @DnDArgument : "var" "cameraShake"
+	with(obj_camera) {
+	cameraShake = 4;
+	
+	}
+
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1
 	/// @DnDHash : 45CB44BA
@@ -92,6 +116,24 @@ if(sprite_index == spr_asteroid_huge)
 	}
 }
 
+/// @DnDAction : YoYo Games.Common.Else
+/// @DnDVersion : 1
+/// @DnDHash : 2B6C5996
+else
+{
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 4ED800C7
+	/// @DnDApplyTo : {obj_camera}
+	/// @DnDParent : 2B6C5996
+	/// @DnDArgument : "expr" "1"
+	/// @DnDArgument : "var" "cameraShake"
+	with(obj_camera) {
+	cameraShake = 1;
+	
+	}
+}
+
 /// @DnDAction : YoYo Games.Loops.Repeat
 /// @DnDVersion : 1
 /// @DnDHash : 688F68DD
@@ -107,4 +149,30 @@ repeat(10)
 	/// @DnDArgument : "objectid" "obj_debris"
 	/// @DnDSaveInfo : "objectid" "obj_debris"
 	instance_create_layer(x + 0, y + 0, "Instances", obj_debris);
+}
+
+/// @DnDAction : YoYo Games.Random.Get_Random_Number
+/// @DnDVersion : 1
+/// @DnDHash : 5A8BB1D7
+/// @DnDArgument : "var" "chance"
+/// @DnDArgument : "var_temp" "1"
+/// @DnDArgument : "type" "1"
+/// @DnDArgument : "max" "5"
+var chance = floor(random_range(0, 5 + 1));
+
+/// @DnDAction : YoYo Games.Common.If_Variable
+/// @DnDVersion : 1
+/// @DnDHash : 3C9C39AA
+/// @DnDArgument : "var" "chance"
+if(chance == 0)
+{
+	/// @DnDAction : YoYo Games.Instances.Create_Instance
+	/// @DnDVersion : 1
+	/// @DnDHash : 1E1D3EC4
+	/// @DnDParent : 3C9C39AA
+	/// @DnDArgument : "xpos_relative" "1"
+	/// @DnDArgument : "ypos_relative" "1"
+	/// @DnDArgument : "objectid" "obj_powerup"
+	/// @DnDSaveInfo : "objectid" "obj_powerup"
+	instance_create_layer(x + 0, y + 0, "Instances", obj_powerup);
 }

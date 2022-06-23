@@ -94,8 +94,8 @@ switch(l6AFE9AC6_0)
 		/// @DnDParent : 1A5B1C99
 		/// @DnDArgument : "x" "250"
 		/// @DnDArgument : "y" "250"
-		/// @DnDArgument : "caption" ""UP/DOWN: move""
-		draw_text(250, 250, string("UP/DOWN: move") + "");
+		/// @DnDArgument : "caption" ""UP: move""
+		draw_text(250, 250, string("UP: move") + "");
 	
 		/// @DnDAction : YoYo Games.Drawing.Draw_Value
 		/// @DnDVersion : 1
